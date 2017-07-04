@@ -1,0 +1,39 @@
+<h1>Create a new student record</h1>
+<% if @student.errors.any? %>
+  <h2>The following errors prevented the student record from being saved</h2>
+  <ul>
+    <% @student.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+  
+<%= form_for @student do |f| %>
+  <p>
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </p>
+    <p>
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </p>
+  <p>
+    <%= f.label :age %><br>
+    <%= f.text_field :age %>
+  </p>
+  <p>
+    <%= f.label :primary_instrument %><br>
+    <%= f.text_field :primary_instrument %>
+  </p>
+  <p>
+    <%= f.label :secondary_instrument %><br>
+    <%= f.text_field :secondary_instrument %>
+  </p>
+  <p>
+    <%= f.label :active %><br>
+    <%= f.text_field :active %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
